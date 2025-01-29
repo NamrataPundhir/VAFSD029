@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Header Section -->
+</header>
+<div id="header">
+    <div id="link"><a href="home.html">HOME</a></div>
+    <div id="link"><a href="about.html">ABOUT</a></div>
+    <div id="link"><a href="classes.html">CLASSES</a></div>
+    <div id="link"><a href="contact.html">CONTACT</a></div>
+    <div id="link"><a href="Events.html">PROGRAM</a></div>
+    <!-- <div id="link"><a href="teachers.html">Teachers</a></div> -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()"> <i class="fas fa-moon"></i></button>
+</div>
+
+    
+    
+    
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <nav><ul>
+            <li><a href="#Yoga"><h1>YOGA STUDIO</h1></a></li>
+        </ul>
+        </nav>
+        <div id="nam">
+            <h2>"Find your inner calm, one breath at a time."<br>
+            <p>Join us to explore the world of Yoga and Meditation.</p></h2>
+            <br>
+            <br>
+        </div>
+        </div>
+    </section>
+    
+   
+    
+    <section id="about">
+        <h2>ABOUT US</h2>
+        <p>At YOGA STUDIO, we believe that yoga is more than just a practice—it's a journey towards inner peace, strength, and self-discovery. Our mission is to create a welcoming space where individuals of all ages and skill levels can connect with their bodies, calm their minds, and nourish their souls.
+
+            Founded by passionate yogis, our studio is dedicated to offering a wide range of classes, from gentle restorative yoga to invigorating vinyasa flows. Our experienced instructors are committed to guiding you through each step of your yoga journey, whether you're a seasoned practitioner or stepping onto the mat for the first time.
+            
+            Join us to explore the transformative power of yoga and embark on a path to holistic well-being. At THE YOGA BUZZ, you'll find a supportive community that inspires growth, balance, and harmony—both on and off the mat.
+            
+            Namaste.
+        </p>
+        <br>
+        <div class="btn">
+            <button id="boy"><a href="./View.html">View Classes</a></button>
+            </div>
+        <br>
+    </section>
+    
+   
+    <section id="classes">
+        <h2>Our Classes</h2>
+        <div class="class-container">
+            <div class="class-card">
+                <a href="Begginer.html"><h3>BEGGINER YOGA</h3></a>
+                <p>Perfect for those new to yoga, focusing on basic poses and breathing techniques.</p>
+            </div>
+            <div class="class-card">
+                <a href="vinyasa.html"><h3>VINYASA YOGA</h3></a>
+                <p>A dynamic and flowing style of yoga, connecting breath with movement.</p>
+            </div>
+            <div class="class-card">
+                <a href="restorative.html"><h3>RESTORATIVE YOGA</h3></a>
+                <p>Relax and unwind with gentle stretches and deep relaxation.</p>
+            </div>
+                <div class="class-card">
+                <a href="hatha.html"><h3>HATHA YOGA</h3></a>
+                <p>A traditional form of yoga focusing on basic postures.</p>
+            </div>
+            <div class="class-card">
+                <a href="kundalini.html"><h3>KUNDALINI YOGA</h3></a>
+                <p>A spiritual and meditative form aimed at awakening the energy at the base of the spine</p>
+            </div>
+            <div class="class-card">
+                <a href="yin.html"><h3>YIN YOGA</h3></a>
+                <p>A slow-paced style with deep stretches held for longer periods (3-5 minutes).</p>
+            </div>
+            <div class="class-card">
+                <a href="power.html"><h3>POWER YOGA</h3></a>
+                <p>A more intense, fitness-oriented version of Vinyasa Yoga.</p>
+                
+            </div>
+        </div>
+    </section>
+    
+
+
+    
+    <footer>
+        <div class="footer-container">
+            <p>&copy; @ 2024 by<span>yoga studio</span>|all rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><img src="png-clipart-facebook-logo-social-media-facebook-computer-icons-linkedin-logo-facebook-icon-media-internet-thumbnail.png" alt="Facebook"></a>
+                <a href="#"><img src="instagram.webp"></a>
+                <a href="#"><img src="Twitter_bird_logo_2012.svg.png" alt="Twitter"></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Function to toggle Dark Mode
+        function toggleDarkMode() {
+          const currentTheme = document.body.getAttribute('data-theme');
+          if (currentTheme === 'dark') {
+            document.body.removeAttribute('data-theme');
+          } else {
+            document.body.setAttribute('data-theme', 'dark');
+          }
+        }
+      </script>
+   
+</body>
+
+</html>

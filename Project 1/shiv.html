@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Command with Waving Lines</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: lightgreen;
+            position: relative;
+        }
+
+        .wave {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0.6),
+                rgba(255, 255, 255, 0.6) 10px,
+                rgba(0, 123, 255, 0.6) 10px,
+                rgba(0, 123, 255, 0.6) 20px
+            );
+            animation: move 3s linear infinite;
+            transform: translate(-50%, -50%);
+            z-index: -1; /* Send the wave behind other elements */
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(-50%, -50%) translateX(0);
+            }
+            100% {
+                transform: translate(-50%, -50%) translateX(-100%);
+            }
+        }
+        
+        #response {
+            position: relative;
+            z-index: 1; /* Ensure response is above the wave */
+            color: black;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        #startVoiceRecognition {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 2; /* Ensure the button is above the wave */
+        }
+
+        #startVoiceRecognition:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="wave"></div>
+    <h1 style="text-align: center; z-index: 1; position: relative;">Voice Command with Waving Lines</h1>
+    <div id="response"></div>
+    
+    <button type="button" id="startVoiceRecognition">Start Voice Recognition</button>
+
+    <script>
+        function startVoiceRecognition() {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (SpeechRecognition) {
+                const recognition = new SpeechRecognition();
+                recognition.lang = 'en-IN'; // Indian English
+                recognition.interimResults = false;
+                recognition.maxAlternatives = 1;
+
+                recognition.start();
+
+                recognition.onresult = function (event) {
+                    const speechToText = event.results[0][0].transcript.toLowerCase(); // Convert to lowercase
+
+                    // Show the recognized speech
+                    document.getElementById('response').innerText = `You said: ${speechToText}`;
+
+                    // Perform your search or command logic here...
+                    // Example: alert(speechToText);
+                };
+
+                recognition.onerror = function (event) {
+                    console.error(event.error);
+                };
+            } else {
+                alert('Speech Recognition is not supported in this browser.');
+            }
+        }
+
+        document.getElementById('startVoiceRecognition').addEventListener('click', startVoiceRecognition);
+    </script>
+</body>
+</html>
